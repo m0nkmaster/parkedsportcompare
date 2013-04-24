@@ -37,8 +37,9 @@
                 // # Formatting cleanup to aid diff
                 body = body.replace(/>\s*/g, '>').replace(/\s+/g, ' ');
                 body = body.replace(/\/[\w]+>/g, ">")
+                body = body.replace(/(\/[\w]+)>/g, "$1>\n");
 
-                return normaliseHtml(body);
+                return body;
             }
 
             var performDiff = function() {
@@ -53,10 +54,6 @@
                        visitDiffChecker(parkedSportContent, sportContent);
                     }
                 }
-            }
-            
-            var normaliseHtml = function(code) {
-                return code.replace(/(\/[\w]+)>/g, "$1>\n");
             }
 
             var compareHtml = function(a, b) {
