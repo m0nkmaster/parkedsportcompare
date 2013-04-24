@@ -29,15 +29,16 @@
 
             var makeContentComparable = function(body) {
 
-                //# Acceptable differences
+                // Acceptable differences
                 body = body.replace(/parkedsport/g, 'sport')
                 body = body.replace(/http:\/\/pal.sandbox.dev.bbc.co.uk/g, '')
                 body = body.replace(/sport\/0\//g, 'sport/');
 
-                // # Formatting cleanup to aid diff
+                // Formatting cleanup to aid diff
                 body = body.replace(/>\s*/g, '>').replace(/\s+/g, ' ');
-                body = body.replace(/\/[\w]+>/g, ">")
-                // body = body.replace(/(<\/[\w-]*>)/g, "$1\n");
+                
+                // Add new lines after each closing tag
+                body = body.replace(/(<\/[\w-]*>)/g, "$1\n");
 
                 return body;
             }
