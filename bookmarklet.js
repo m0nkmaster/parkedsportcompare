@@ -89,6 +89,8 @@
                   parkedSportContent = makeContentComparable(data);
                   
                   performDiff();
+              }).fail(function() {
+                  alert('No parkedsport equivalent found for this page, on this environment.')
               });
             }).fail(function() {
                 alert('This page is returning a 404 or 500. You can\'t compare an erroring page.');
