@@ -71,8 +71,8 @@
             
             var visitDiffChecker = function(file1, file2) {
                 jQuery('<form method="POST" action="http://www.diffchecker.com/diff" target="_blank">' +
-                '<input type="hidden" name="file1" value="' + file1 + '" />' +
-                '<input type="hidden" name="file2" value="' + file2 + '" />' +
+                '<textarea name="file1">' + file1 + '</textarea>' +
+                '<textarea name="file2">' + file2 + '</textarea>' +
                 '</form>').appendTo('body').submit();
             }
             
