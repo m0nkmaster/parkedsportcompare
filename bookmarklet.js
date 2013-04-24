@@ -78,21 +78,18 @@
                 return false;
             }
 
-            //Get the body
-            jQuery.get(url, function(data) {
-                sportContent = data;
-                //Get parkedsport body
-                jQuery.get(parkedUrl, function(data) {
-                  
-                  //make html comparable
-                  sportContent = makeContentComparable(sportContent);
-                  parkedSportContent = makeContentComparable(data);
-                  
-                  performDiff();
-              });
-            }).fail(function() {
-                alert('This page is returning a 404 or 500. You can\'t compare an erroring page.');
-            });
+            //Get the page content
+            sportContent = document.all[0].innerHTML;
+
+            //Get parkedsport content
+            jQuery.get(parkedUrl, function(data) {
+              
+              //make html comparable
+              sportContent = makeContentComparable(sportContent);
+              parkedSportContent = makeContentComparable(data);
+              
+              performDiff();
+          });
         })();
     }
 })();
