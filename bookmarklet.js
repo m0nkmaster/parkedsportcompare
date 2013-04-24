@@ -47,7 +47,7 @@
                 if (compareHtml(parkedSportContent, sportContent)) {
                     alert('Sport and Parkedsport match for ' + url + ' yay!');
                 } else {
-                    var checkIt = confirm("The files to not match.\n\nWould you like to view a full diff report?");
+                    var checkIt = confirm("The code does not match.\n\nWould you like to view a full diff report?");
                     if (checkIt == true) {
                        visitDiffChecker(parkedSportContent, sportContent);
                     }
@@ -93,7 +93,7 @@
                   
                   performDiff();
               }).fail(function() {
-                  alert('No parkedsport equivalent found for this page, on this environment.')
+                  alert('No parkedsport equivalent was found for this page, on this domain.')
               });
             }).fail(function() {
                 alert('This page is returning a 404 or 500. You can\'t compare an erroring page.');
