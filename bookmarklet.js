@@ -1,7 +1,7 @@
 (function(){
 
     // the minimum version of jQuery we want
-    var v = "1.3.2";
+    var v = "1.9.1";
 
     // check prior inclusion and version
     if (window.jQuery === undefined || window.jQuery.fn.jquery < v) {
@@ -64,11 +64,14 @@
             //Get the body
             jQuery.get(url, function(data) {
                 sportContent = data;
+                //Get parkedsport body
                 jQuery.get(parkedUrl, function(data) {
                   sportContent = makeContentComparable(sportContent);
                   parkedSportContent = makeContentComparable(data);
                   performDiff();
               });
+            }).fail(function() {
+                alert('This page is returning a 404 or 500. You can\'t compare an erroring page.');
             });
         })();
     }
