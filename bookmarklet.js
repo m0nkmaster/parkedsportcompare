@@ -60,6 +60,19 @@
 
                 return aNormalized == bNormalized;
             }
+            
+            var invalidUrl = function(url) {
+                if (url.search(/http:\/\/[\w\.]+.bbc.co.uk\/sport/) == 0) {
+                    return ture;
+                }
+                
+                return false;
+            }
+            
+            if (invalidUrl(url)) {
+                alert('This script only works with BBC Sport urls. Sorry.');
+                return false;
+            }
 
             //Get the body
             jQuery.get(url, function(data) {
