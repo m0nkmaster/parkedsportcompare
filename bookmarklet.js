@@ -44,9 +44,9 @@
                 if (compareHtml(parkedSportContent, sportContent)) {
                     alert('Sport and Parkedsport match for ' + url + ' yay!');
                 } else {
-                    var checkIt = confirm("They don't match. Do you want to visit " + parkedUrl);
+                    var checkIt = confirm("The files to not match. Would you like to view a full diff report?");
                     if (checkIt == true) {
-                       window.open(parkedUrl ,'_newtab');
+                       visitDiffChecker(parkedSportContent, sportContent);
                     }
                 }
             }
@@ -67,6 +67,13 @@
                 }
                 
                 return false;
+            }
+            
+            var visitDiffChecker = function(file1, file2) {
+                jQuery('<form method="POST" action="http://www.diffchecker.com/diff" target="_blank">' +
+                '<input type="hidden" name="file1" value="' + file1 + '" />' +
+                '<input type="hidden" name="file2" value="' + file2 + '" />' +
+                '</form>').appendTo('body').submit();
             }
             
             if (invalidUrl(url)) {
