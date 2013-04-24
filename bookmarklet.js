@@ -77,7 +77,7 @@
             }
             
             if (invalidUrl(url)) {
-                alert('This script only works with BBC Sport urls. Sorry.');
+                alert("This script only works with BBC Sport urls. You're not running this on a parkedsport url are you?");
                 return false;
             }
 
