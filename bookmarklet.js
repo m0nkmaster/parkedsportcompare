@@ -28,7 +28,6 @@
             var parkedSportContent;
 
             var makeContentComparable = function(body) {
-                alert('Making comparable');
 
                 //# Acceptable differences
                 body = body.replace(/parkedsport/g, 'sport')
