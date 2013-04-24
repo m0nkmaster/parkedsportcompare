@@ -44,7 +44,7 @@
                 if (compareHtml(parkedSportContent, sportContent)) {
                     alert('Sport and Parkedsport match for ' + url + ' yay!');
                 } else {
-                    var checkIt = confirm("The files to not match. Would you like to view a full diff report?");
+                    var checkIt = confirm("The files to not match.\n\nWould you like to view a full diff report?");
                     if (checkIt == true) {
                        visitDiffChecker(parkedSportContent, sportContent);
                     }
@@ -77,7 +77,7 @@
             }
             
             if (invalidUrl(url)) {
-                alert("This script only works with BBC Sport urls. You're not running this on a parkedsport url are you?");
+                alert("This script only works with BBC Sport urls.\n\nYou're not running this on a parkedsport url are you?");
                 return false;
             }
 
