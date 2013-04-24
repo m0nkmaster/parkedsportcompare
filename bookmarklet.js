@@ -63,7 +63,7 @@
             
             var invalidUrl = function(url) {
                 if (url.search(/http:\/\/[\w\.]+.bbc.co.uk\/sport/) == 0) {
-                    return ture;
+                    return true;
                 }
                 
                 return false;
