@@ -37,7 +37,7 @@
                 // # Formatting cleanup to aid diff
                 body = body.replace(/>\s*/g, '>').replace(/\s+/g, ' ');
 
-                return body;
+                return normaliseHtml(body);
             }
 
             var performDiff = function() {
@@ -50,15 +50,15 @@
                     }
                 }
             }
+            
+            var normaliseHtml = function(code) {
+                var div = jQuery(document.createElement('div'));
+                div.html(code);
+                return div.html();
+            }
 
             var compareHtml = function(a, b) {
-                var div = jQuery(document.createElement('div'));
-                div.html(a);
-                var aNormalized = div.html();
-                div.html(b);
-                var bNormalized = div.html();
-
-                return aNormalized == bNormalized;
+                return a == b;
             }
             
             var invalidUrl = function(url) {
@@ -86,8 +86,11 @@
                 sportContent = data;
                 //Get parkedsport body
                 jQuery.get(parkedUrl, function(data) {
+                  
+                  //make html comparable
                   sportContent = makeContentComparable(sportContent);
                   parkedSportContent = makeContentComparable(data);
+                  
                   performDiff();
               });
             }).fail(function() {
