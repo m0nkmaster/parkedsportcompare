@@ -44,9 +44,6 @@
             }
 
             var performDiff = function() {
-                
-                alert(parkedSportContent);
-                alert(sportContent);
                 if (compareHtml(parkedSportContent, sportContent)) {
                     alert('Sport and Parkedsport match for ' + url + ' yay!');
                 } else {
