@@ -37,7 +37,7 @@
                 // # Formatting cleanup to aid diff
                 body = body.replace(/>\s*/g, '>').replace(/\s+/g, ' ');
                 body = body.replace(/\/[\w]+>/g, ">")
-                body = body.replace(/(\/[\w]+>)/g, "$1>\n");
+                body = body.replace(/(<\/[\w-]*>)/g, "$1\n");
 
                 return body;
             }
