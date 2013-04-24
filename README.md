@@ -1,5 +1,5 @@
-parkedsportcompare
-==================
+Parkedsport compare tool
+========================
 
 A random little Javascript bookmarklet script to compare the URL that you're on (must be a BBC Sport webpage) with it's 'parked sport' equivalent. If you don't know what I'm talking about this script isn't for you.
 
