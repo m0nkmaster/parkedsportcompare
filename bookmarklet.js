@@ -67,11 +67,13 @@
             }
             
             var visitDiffChecker = function(file1, file2) {
-                jQuery('<form method="POST" action="http://www.diffchecker.com/diff" target="_blank">' +
+                jQuery('<form id="visitDiffChecker" method="POST" action="http://www.diffchecker.com/diff" target="_blank">' +
                 '<textarea name="file1">' + file1 + '</textarea>' +
                 '<textarea name="file2">' + file2 + '</textarea>' +
                 '<input type="hidden" value="month" name="storage-options" />' +
                 '</form>').appendTo('body').submit();
+                
+                $('form#visitDiffChecker').remove();
             }
             
             if (invalidUrl(url)) {
