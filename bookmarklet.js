@@ -50,6 +50,11 @@
             }
 
             var performDiff = function() {
+                if (parkedSportContent == '') {
+                    alert('No parkedsport equivalent was found for this page, on ' + domain);
+                    return false;
+                }
+
                 if (compareHtml(parkedSportContent, sportContent)) {
                     alert("/sport and /parkedsport match; yay!\n\n" + url);
                 } else {
@@ -105,11 +110,10 @@
                   //make html comparable
                   sportContent = makeContentComparable(sportContent);
                   parkedSportContent = makeContentComparable(data);
+                  console.log(sportContent);
+                  console.log(parkedSportContent);
                   
-                  performDiff();   
-                })
-                .fail(function() {
-                  alert('No parkedsport equivalent was found for this page, on ' + domain);
+                  performDiff();
                 });
             });
             
