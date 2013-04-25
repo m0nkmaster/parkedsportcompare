@@ -66,6 +66,8 @@
             }
 
             var compareHtml = function(a, b) {
+                alert(a);
+                alert(b);
                 return a == b;
             }
             
