@@ -24,6 +24,7 @@
 
             var url = location.href;
             url = url.replace(/callback=[\w-_]*/, 'callback=toString');
+            var domain = domain = url.match(/http:\/\/[\w-.]*\//)[0].replace('http://', '').replace('/', '');
             var parkedUrl = url.replace('/sport', '/parkedsport');
             var sportContent;
             var parkedSportContent;
@@ -98,7 +99,7 @@
                   
                   performDiff();
                 }).fail(function() {
-                  alert('No parkedsport equivalent was found for this page, on this domain.')
+                  alert('No parkedsport equivalent was found for this page, on ' + domain);
                 });
             });
             
