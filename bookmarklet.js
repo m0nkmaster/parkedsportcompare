@@ -84,7 +84,7 @@
             //Get the body again.
             var jqxhr = jQuery.ajax({
               url: url,
-              jsonp: true,
+              jsonp: false,
               jsonpCallback: 'callback',
               callback: function() {alert('gello');}
             });
