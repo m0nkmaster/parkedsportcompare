@@ -105,8 +105,7 @@
             jqxhr.always(function(data) {
                 sportContent = data;
                 //Get parkedsport body
-                jQuery.ajax(parkedUrl, function(data) {
-                }).always(function() {
+                jQuery.ajax(parkedUrl).always(function(data) {
 
                   //make html comparable
                   sportContent = makeContentComparable(sportContent);
