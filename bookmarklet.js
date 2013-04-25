@@ -31,7 +31,6 @@
 
             var makeContentComparable = function(body) {
 
-                alert(typeof(body));
                 if (typeof(body)=='object') {
                     body = body.toString();
                 }
@@ -95,11 +94,7 @@
 
             //Get the body again.
             var jqxhr = jQuery.ajax({
-              url: url,
-              callback: function() {alert('callback');},
-              jsonpCallback: function() {alert('JSONP call succeeded!');},
-              async: false,
-              crossDomain: false
+              url: url
             });
             
             jqxhr.always(function(data) {
@@ -110,18 +105,10 @@
                   //make html comparable
                   sportContent = makeContentComparable(sportContent);
                   parkedSportContent = makeContentComparable(data);
-                  alert(sportContent);
-                  alert(parkedSportContent);
                   
                   performDiff();
                 });
             });
-            
-            //jqxhr.fail(function(jqXHR, textStatus, errorThrown) {
-            //    alert('This page is returning a 404 or 500. You can\'t compare an erroring page.');
-            //    console.log(textStatus + ': ' + errorThrown);
-            //    console.log(jqXHR);
-            //});
             
         })();
     }
