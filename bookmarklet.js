@@ -45,7 +45,7 @@
 
             var performDiff = function() {
                 if (compareHtml(parkedSportContent, sportContent)) {
-                    alert('Sport and Parkedsport match for ' + url + ' yay!');
+                    alert("/sport and /parkedsport match; yay!\n\n" + url);
                 } else {
                     var checkIt = confirm("The code does not match.\n\nWould you like to view a full diff report?");
                     if (checkIt == true) {
@@ -77,7 +77,7 @@
             }
             
             if (invalidUrl(url)) {
-                alert("This script only works with BBC Sport urls.\n\nYou're not running this on a parkedsport url are you?");
+                alert("This script only works with *.bbc.co.uk/sport urls.\n\nYou're not running this on a /parkedsport url are you?");
                 return false;
             }
 
