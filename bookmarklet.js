@@ -31,7 +31,7 @@
 
                 // Acceptable differences
                 body = body.replace(/parkedsport/g, 'sport')
-                body = body.replace(/http:\/\/pal.sandbox.dev.bbc.co.uk/g, '')
+                body = body.replace(/http:\/\/[\w\.]*.bbc.co.uk/g, '')
                 body = body.replace(/sport\/0\//g, 'sport/');
 
                 // Formatting cleanup to aid diff
