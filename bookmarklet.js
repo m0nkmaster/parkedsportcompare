@@ -96,22 +96,23 @@
                 sportContent = data;
                 //Get parkedsport body
                 jQuery.ajax(parkedUrl, function(data) {
-                  
+                }).always(function() {
                   //make html comparable
                   sportContent = makeContentComparable(sportContent);
                   parkedSportContent = makeContentComparable(data);
                   
-                  performDiff();
-                }).fail(function() {
+                  performDiff();   
+                })
+                .fail(function() {
                   alert('No parkedsport equivalent was found for this page, on ' + domain);
                 });
             });
             
-            jqxhr.fail(function(jqXHR, textStatus, errorThrown) {
-                alert('This page is returning a 404 or 500. You can\'t compare an erroring page.');
-                console.log(textStatus + ': ' + errorThrown);
-                console.log(jqXHR);
-            });
+            //jqxhr.fail(function(jqXHR, textStatus, errorThrown) {
+            //    alert('This page is returning a 404 or 500. You can\'t compare an erroring page.');
+            //    console.log(textStatus + ': ' + errorThrown);
+            //    console.log(jqXHR);
+            //});
             
         })();
     }
