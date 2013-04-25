@@ -23,6 +23,7 @@
         (window.myBookmarklet = function() {
 
             var url = location.href;
+            url = url.replace(/callback=[\w-_]*/, 'callback=toString');
             var parkedUrl = url.replace('/sport', '/parkedsport');
             var sportContent;
             var parkedSportContent;
@@ -83,10 +84,7 @@
 
             //Get the body again.
             var jqxhr = jQuery.ajax({
-              url: url,
-              jsonp: false,
-              jsonpCallback: 'callback',
-              callback: function() {alert('gello');}
+              url: url
             });
             
             jqxhr.done(function(data) {
