@@ -31,6 +31,7 @@
 
             var makeContentComparable = function(body) {
 
+                // If we've called a json/jsonp endpoint we may have an object
                 if (typeof(body) == 'object') {
                     body = JSON.stringify(body).replace(/\\"/g, '"');
                     body = body.replace(/},/g, "},\n");
@@ -67,8 +68,6 @@
             }
 
             var compareHtml = function(a, b) {
-                alert(a);
-                alert(b);
                 return a == b;
             }
             
