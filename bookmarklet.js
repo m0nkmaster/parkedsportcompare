@@ -88,13 +88,14 @@
               url: url,
               jsonpCallback: function() {
                 alert('JSONP call succeeded!');
-              }
+              },
+              async: false
             });
             
             jqxhr.done(function(data) {
                 sportContent = data;
                 //Get parkedsport body
-                jQuery.get(parkedUrl, function(data) {
+                jQuery.ajax(parkedUrl, function(data) {
                   
                   //make html comparable
                   sportContent = makeContentComparable(sportContent);
