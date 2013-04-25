@@ -95,7 +95,7 @@
               }).fail(function() {
                   alert('No parkedsport equivalent was found for this page, on this domain.')
               });
-            }, {jsonp:'onJSONPLoad'}).fail(function(jqXHR, textStatus, errorThrown) {
+            }, jsonp = 'onJSONPLoad').fail(function(jqXHR, textStatus, errorThrown) {
                 alert('This page is returning a 404 or 500. You can\'t compare an erroring page.');
                 console.log(textStatus + ': ' + errorThrown);
             });
