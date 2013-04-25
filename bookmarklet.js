@@ -86,9 +86,8 @@
             //Get the body again.
             var jqxhr = jQuery.ajax({
               url: url,
-              jsonpCallback: function() {
-                alert('JSONP call succeeded!');
-              },
+              callback: function() {alert('callback');},
+              jsonpCallback: function() {alert('JSONP call succeeded!');},
               async: false
             });
             
