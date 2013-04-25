@@ -32,7 +32,7 @@
             var makeContentComparable = function(body) {
 
                 if (typeof(body) == 'object') {
-                    body = JSON.stringify(body).replace(/\\"/g, '"').replace(/},/g, "},\n");
+                    body = JSON.stringify(body).replace(/\\"/g, '"').replace(/}/g, "}\n");
                 }
 
                 // Acceptable differences
