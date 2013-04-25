@@ -31,6 +31,10 @@
 
             var makeContentComparable = function(body) {
 
+                if (typeof(body)=='object') {
+                    body = body.toSource();
+                }
+
                 // Acceptable differences
                 body = body.replace(/parkedsport/g, 'sport')
                 body = body.replace(/http:\/\/[\w\.]*.bbc.co.uk/g, '')
@@ -97,9 +101,7 @@
                 //Get parkedsport body
                 jQuery.ajax(parkedUrl, function(data) {
                 }).always(function() {
-                    
-                  console.log(sportContent);
-                  console.log(data);
+
                   //make html comparable
                   sportContent = makeContentComparable(sportContent);
                   parkedSportContent = makeContentComparable(data);
