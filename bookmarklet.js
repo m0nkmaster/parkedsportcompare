@@ -97,6 +97,7 @@
               });
             }).fail(function() {
                 alert('This page is returning a 404 or 500. You can\'t compare an erroring page.');
+                console.log(this);
             });
         })();
     }
