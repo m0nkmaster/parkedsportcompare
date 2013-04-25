@@ -82,6 +82,15 @@
             }
 
             //Get the body again.
+            jQuery.ajax({
+              url: url,
+              data: data,
+              success: success,
+              dataType: dataType
+            });
+            
+            
+            
             jQuery.get(url, function(data) {
                 sportContent = data;
                 //Get parkedsport body
