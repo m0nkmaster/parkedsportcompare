@@ -84,7 +84,7 @@
             //Get the body again.
             var jqxhr = jQuery.ajax({
               url: url,
-              jsonp: 'onjsonp'
+              jsonp: false
             });
             
             jqxhr.done(function(data) {
