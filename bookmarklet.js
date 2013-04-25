@@ -97,6 +97,9 @@
                 //Get parkedsport body
                 jQuery.ajax(parkedUrl, function(data) {
                 }).always(function() {
+                    
+                  alert(sportContent);
+                  alert(data);
                   //make html comparable
                   sportContent = makeContentComparable(sportContent);
                   parkedSportContent = makeContentComparable(data);
