@@ -111,8 +111,8 @@
                   //make html comparable
                   sportContent = makeContentComparable(sportContent);
                   parkedSportContent = makeContentComparable(data);
-                  console.log(sportContent);
-                  console.log(parkedSportContent);
+                  alert(sportContent);
+                  alert(parkedSportContent);
                   
                   performDiff();
                 });
