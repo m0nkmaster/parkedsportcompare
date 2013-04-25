@@ -107,6 +107,7 @@
             jqxhr.fail(function(jqXHR, textStatus, errorThrown) {
                 alert('This page is returning a 404 or 500. You can\'t compare an erroring page.');
                 console.log(textStatus + ': ' + errorThrown);
+                console.log(jqXHR);
             });
             
         })();
