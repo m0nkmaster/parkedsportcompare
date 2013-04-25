@@ -31,8 +31,8 @@
 
             var makeContentComparable = function(body) {
 
-                if (typeof(body)=='object') {
-                    body = body.toString();
+                if (typeof(body) == 'object') {
+                    body = JSON.stringify(body);
                 }
 
                 // Acceptable differences
