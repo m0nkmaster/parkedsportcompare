@@ -88,7 +88,8 @@
               url: url,
               callback: function() {alert('callback');},
               jsonpCallback: function() {alert('JSONP call succeeded!');},
-              async: false
+              async: false,
+              crossDomain: false
             });
             
             jqxhr.done(function(data) {
