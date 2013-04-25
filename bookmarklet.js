@@ -32,7 +32,7 @@
             var makeContentComparable = function(body) {
 
                 if (typeof(body)=='object') {
-                    body = body.toSource();
+                    body = body.toString();
                 }
 
                 // Acceptable differences
