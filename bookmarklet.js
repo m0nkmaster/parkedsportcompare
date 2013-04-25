@@ -85,8 +85,8 @@
             var jqxhr = jQuery.ajax({
               url: url,
               jsonp: true,
-              jsonpCallback: 'jpcb',
-              callback: function() {}
+              jsonpCallback: 'callback',
+              callback: function() {alert('gello');}
             });
             
             jqxhr.done(function(data) {
