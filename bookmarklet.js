@@ -82,16 +82,12 @@
             }
 
             //Get the body again.
-            jQuery.ajax({
+            var jqxhr = jQuery.ajax({
               url: url,
-              data: data,
-              success: success,
-              dataType: dataType
+              jsonp: 'onjsonp'
             });
             
-            
-            
-            jQuery.get(url, function(data) {
+            jqxhr.done(function() {
                 sportContent = data;
                 //Get parkedsport body
                 jQuery.get(parkedUrl, function(data) {
@@ -101,13 +97,16 @@
                   parkedSportContent = makeContentComparable(data);
                   
                   performDiff();
-              }).fail(function() {
+                }).fail(function() {
                   alert('No parkedsport equivalent was found for this page, on this domain.')
-              });
-            }, {jsonp : 'onJSONPLoad'}).fail(function(jqXHR, textStatus, errorThrown) {
+                });
+            });
+            
+            jqxhr.fail(function(jqXHR, textStatus, errorThrown) {
                 alert('This page is returning a 404 or 500. You can\'t compare an erroring page.');
                 console.log(textStatus + ': ' + errorThrown);
             });
+            
         })();
     }
 })();
