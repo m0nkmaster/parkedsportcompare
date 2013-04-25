@@ -84,7 +84,7 @@
             //Get the body again.
             var jqxhr = jQuery.ajax({
               url: url,
-              jsonp: false,
+              jsonp: true,
               jsonpCallback: 'jpcb'
             });
             
