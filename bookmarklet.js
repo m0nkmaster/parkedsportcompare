@@ -31,6 +31,7 @@
 
             var makeContentComparable = function(body) {
 
+                alert(typeof(body));
                 if (typeof(body)=='object') {
                     body = body.toString();
                 }
