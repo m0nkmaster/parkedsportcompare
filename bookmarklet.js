@@ -38,7 +38,7 @@
             };
 
             var performDiff = function() {
-                if (parkedSportContent == '') {
+                if (parkedSportContent === '') {
                     alert('No parkedsport equivalent was found for this page, on ' + domain);
                     return false;
                 }
@@ -47,18 +47,18 @@
                     alert("/sport and /parkedsport match; yay!\n\n" + url);
                 } else {
                     var checkIt = confirm("The code does not match.\n\nWould you like to view a full diff report?");
-                    if (checkIt == true) {
+                    if (checkIt === true) {
                        visitDiffChecker(parkedSportContent, sportContent);
                     }
                 }
             };
 
             var compareHtml = function(a, b) {
-                return a == b;
+                return a === b;
             };
             
             var invalidUrl = function(url) {
-                if (url.search(/http:\/\/[\w\.]+.bbc.co.uk\/sport/) != 0) {
+                if (url.search(/http:\/\/[\w\.]+.bbc.co.uk\/sport/) !== 0) {
                     return true;
                 }
                 
