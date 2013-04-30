@@ -19,7 +19,7 @@ Usage
 
 When you are viewing a BBC Sport page. Click on the bookmarklet and the HTML source of the page will be compared with the source of the equivalent parkedsport url, on the same environment as the original page.
 
-If the two HTML sources match you will be told so. Otherwise you will be offered the option to view the parked sport page and view a diff of the two pieces of code.
+If the two HTML sources match you will be told so. Otherwise you will be offered the option to view a visual diff of the two pieces of code.
 
 Notes
 -----
