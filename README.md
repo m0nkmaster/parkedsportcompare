@@ -9,7 +9,7 @@ Install
 ------
 
 ```javascript
-javascript:(function(){if(window.myBookmarklet!==undefined){myBookmarklet();}else{document.body.appendChild(document.createElement('script')).src='https://raw.github.com/m0nkmaster/parkedsportcompare/master/bookmarklet.js?';}})();
+javascript:(function(){if(window.myBookmarklet!==undefined){myBookmarklet();}else{document.body.appendChild(document.createElement('script')).src='https://rawgithub.com/m0nkmaster/parkedsportcompare/master/bookmarklet.js?';}})();
 ```
 
 Copy the above javascript code snippet into a bookmark.
